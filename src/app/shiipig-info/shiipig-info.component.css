@@ -1,0 +1,24 @@
+.card {
+    flex-direction: row;
+    margin: 4px;
+    width: 100%;
+    background-color: rgb(243, 248, 249);
+}
+
+.card img {
+    width: 50%;
+}
+
+.container{
+    margin: 30px auto;
+}
+
+.right{
+    position: absolute;
+    right: 30px;
+}
+
+.method{
+    display: inline-block;
+    width: 45%;
+}

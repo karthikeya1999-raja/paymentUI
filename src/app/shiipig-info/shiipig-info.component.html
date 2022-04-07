@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="shipping-info">
+        <h2>Shipping Information</h2>
+        <div class="card">
+            <img [src]="img" class="card-img-top" alt="Address location Map">
+            <div class="card-body">
+                <h5 class="card-title">{{customer.fname+" "+customer.lname}}</h5>
+                <p class="card-text">{{customer.address != ""? customer.address : "Address"}}</p>
+                <p class="card-text">{{customer.city != ""? customer.city : "City"}}</p>
+                <p class="card-text">{{customer.pcode != ""? customer.pcode : "Pcode"}}</p>
+                <p class="card-text">{{customer.phone != ""? customer.phone : "Phone"}}</p>
+                <button class="btn btn-default text-primary m-3" (click)="editAddress()">Edit Address</button>
+                <button class="btn btn-default text-primary m-3" (click)="addNew()">Add New</button>
+            </div>
+        </div>
+    </div>
+    <div class="shipping-method">
+        <form class="form-group" [formGroup]="shippingForm" (ngSubmit)="saveShippingInfo()">
+            <h2>Shipping Method</h2>
+            <div class="card method">
+                <div class="card-body">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="method" id="radio1" value="standred" formControlName="method">
+                        <label class="form-check-label" for="radio1">
+                          <h6>Standred Delivery<span class="right">Free</span></h6> 
+                        </label>
+                      </div>
+                    <p class="card-text">Estimated 14-20 dasy shipping <br>(Duties and taxes may be due upon delivary)</p>
+                </div>
+            </div>
+            <div class="card method">
+                <div class="card-body">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="method" id="radio2" value="paid" formControlName="method">
+                        <label class="form-check-label" for="radio2">
+                            <h6>Fast Delivery<span class="right">Rs. 250</span></h6>
+                        </label>
+                      </div>
+                    <p class="card-text">Estimated 2-5 days shipping <br>(Duties and taxes may be due upon delivary)</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <button type="button" class="btn btn-default m-3" (click)="editAddress()"><span class="fa fa-arrow-left m-2"></span>Bact to Customer Info</button>
+                </div>
+                <div class="col-6">
+                    <button type="submit" class="btn btn-primary m-3">Continue to Payment</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

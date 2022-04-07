@@ -1,0 +1,12 @@
+.container{
+    margin: 30px auto;
+}
+
+.right{
+    position: absolute;
+    right: 30px;
+}
+
+.s{
+    margin: 2px;
+}

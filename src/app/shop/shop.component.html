@@ -1,0 +1,14 @@
+<div class="contain">
+    <h2>Here are some of Our Products...</h2>
+    <div class="card h-100" style="width: 23%" *ngFor="let item of items; let i = index">
+        <img [src]="item.itemImg" class="card-img-top" alt={{item.itemName}}>
+        <div class="card-body">
+          <h5 class="card-title">Name: {{item.itemName}}</h5>
+          <p class="card-text">Price: {{item.itemPrice}}</p>
+          <p class="card-text">Description: <span *ngIf="show==i">{{item.itemDescription}}</span></p>
+          <button class="btn btn-info" (click)="show==i? hideDes() : showDes(i)">{{show==i? "Hide" : "Show"}}</button>
+          <p class="card-text">Brand: {{item.itemBrand}}</p>
+          <button href="#" class="btn btn-primary" (click)="toShoppingList(i)">Add to Cart</button>
+        </div>
+    </div>
+</div>

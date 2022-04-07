@@ -1,0 +1,27 @@
+.card {
+    flex-direction: row;
+    margin: 4px;
+    width: 100%;
+}
+
+.card img {
+    width: 25%;
+}
+
+.contain{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(220, 246, 248);
+    margin: 1px solid rgba(143, 145, 148, 0.272);
+    border-radius: 5px;
+}
+
+.left{
+    float: left;
+}
+
+.btn{
+    width: 30%;
+}

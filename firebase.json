@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/paymentUI",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

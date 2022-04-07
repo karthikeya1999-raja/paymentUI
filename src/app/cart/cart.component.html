@@ -1,0 +1,22 @@
+<div class="contain">
+    <h3>Your Cart Items are Here <sup>({{myCartItems.length}})</sup></h3>
+    <div class="card" *ngFor="let item of myCartItems; let i = index">
+        <img [src]="item.itemImg" class="card-img-top" alt={{item.itemName}}>
+        <div class="card-body">
+          <h5 class="card-title">Name: {{item.itemName}}</h5>
+          <p class="card-text">Price: {{item.itemPrice}}</p>
+          <p class="card-text">Brand: {{item.itemBrand}}</p>
+          <button class="btn btn-danger" (click)="removeFromCart(i)">Remove</button>
+        </div>
+    </div>
+    <hr>
+    <div>
+        <p><span class="left">Subtotal:</span> <span class="right">Rs. {{subtotalCost}}</span></p>
+        <p><span class="left">Shipping:</span> <span class="right">{{shipping=="standred"? "Free" : shippingCost}}</span></p>
+    </div>
+    <hr>
+    <h5><span class="left">Total:</span><span class="right">Rs. {{totalCost}}</span></h5>
+    <hr>
+    <button class="btn btn-success" (click)="paymentInProcess? cancelPayment() : placeOrder()">
+        {{paymentInProcess? "Cancel" : "Place Order"}}</button>
+</div>
