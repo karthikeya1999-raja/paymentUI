@@ -8,4 +8,19 @@ export class Customer{
         public pcode: string = "",
         public phone: string = ""
     ){}
+
+    public isValid(){
+        if(
+            this.fname != "" &&
+            this.lname != "" &&
+            this.address != "" &&
+            this.country != "" &&
+            this.city != "" &&
+            this.pcode != "" &&
+            this.phone != ""
+        ){
+            return true;
+        }
+        return false;
+    }
 }

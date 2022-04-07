@@ -45,6 +45,10 @@ export class ShiipigInfoComponent implements OnInit {
 
     if(this.shopVisited){
       this.customer = this.shopService.getCustomerInfo();
+      if(!this.customer.isValid()){
+        alert("Enter the details first");
+        this.router.navigate(['/order/customerInfo']);
+      }
     }else{
       this.router.navigate(['/shop']);
     }

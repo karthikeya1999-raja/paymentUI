@@ -1,6 +1,6 @@
-<div class="contain">
+<div class="contain" id="contain">
     <h2>Here are some of Our Products...</h2>
-    <div class="card h-100" style="width: 23%" *ngFor="let item of items; let i = index">
+    <div class="card" style="width: 23%" *ngFor="let item of items; let i = index">
         <img [src]="item.itemImg" class="card-img-top" alt={{item.itemName}}>
         <div class="card-body">
           <h5 class="card-title">Name: {{item.itemName}}</h5>

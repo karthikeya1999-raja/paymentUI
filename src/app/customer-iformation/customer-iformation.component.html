@@ -44,7 +44,7 @@
                 <button type="button" class="btn btn-default m-3" (click)="returnBack()"><span class="fa fa-arrow-left m-2"></span>Return to Shop</button>
             </div>
             <div class="col-6">
-                <button type="submit" class="btn btn-primary m-3">Continue to shipping</button>
+                <button type="submit" class="btn btn-primary m-3" [disabled]="!custInfoForm.valid">Continue to shipping</button>
             </div>
         </div>
     </form>

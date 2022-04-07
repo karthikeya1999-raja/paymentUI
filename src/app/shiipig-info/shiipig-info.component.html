@@ -44,7 +44,7 @@
                     <button type="button" class="btn btn-default m-3" (click)="editAddress()"><span class="fa fa-arrow-left m-2"></span>Bact to Customer Info</button>
                 </div>
                 <div class="col-6">
-                    <button type="submit" class="btn btn-primary m-3">Continue to Payment</button>
+                    <button type="submit" class="btn btn-primary m-3" [disabled]="!shippingForm.valid">Continue to Payment</button>
                 </div>
             </div>
         </form>

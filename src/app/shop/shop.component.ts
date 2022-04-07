@@ -94,6 +94,11 @@ export class ShopComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    let myElement = document.getElementById("contain");
+    if(myElement != null){
+      myElement.style.height = window.outerHeight+"px";
+    }
+
     this.shopService.visitedShop();
     this.shopService.loadMyCartItems();
     this.shopService.paymentCancled();

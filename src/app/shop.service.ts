@@ -13,11 +13,15 @@ export class ShopService {
 
   myCart: Product[] = [];
   customer: Customer = new Customer();
-  shippingMethod = new BehaviorSubject<string>("standred");
+  shippingMethod = new BehaviorSubject<string>("");
   myCartChanged = new BehaviorSubject<Product[]>([]);
   inEditMode = new BehaviorSubject<boolean>(false);
   pymentInProcess = new BehaviorSubject<boolean>(false);
   shopVisited = new BehaviorSubject<boolean>(false);
+
+  isCustmoerDetailsValid(){
+    return this.customer.isValid();
+  }
 
   visitedShop(){
     this.shopVisited.next(true);

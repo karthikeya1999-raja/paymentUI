@@ -5,23 +5,44 @@
 }
 
 .card img {
-    width: 25%;
+    width: 27%;
+    margin: 5px;
 }
 
 .contain{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 20px;
-    text-align: center;
-    background-color: rgb(220, 246, 248);
-    margin: 1px solid rgba(143, 145, 148, 0.272);
-    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 10px;
+    text-align: left;
+    background-color: rgba(167, 209, 255, 0.2);
 }
 
-.left{
-    float: left;
+.cart-title{
+    display: inline-block;
+}
+
+.right{
+    position: absolute;
+    right: 30px;
+}
+
+.info{
+    margin: 4px;
+}
+
+.card-title{
+    margin-bottom: 2px;
+}
+
+.card-text{
+    margin: 2px;
 }
 
 .btn{
-    width: 30%;
+    width: 50%;
+}
+
+.form-select{
+    background-color: rgba(167, 209, 255, 0.2);
+    border: 0;
 }

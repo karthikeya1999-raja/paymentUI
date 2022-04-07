@@ -15,17 +15,29 @@ export class PaymentComponent implements OnInit {
     private router: Router) { }
 
   shopVisited = false;
+  shippingMethod = "";
 
   form = new FormGroup({
     payTyp: new FormControl('',[Validators.required])
   });
 
   cardForm = new FormGroup({
-    cardNo: new FormControl('',[Validators.required, Validators.minLength(16), Validators.maxLength(16)]),
-    name: new FormControl('',[Validators.required]),
-    expDate: new FormControl('',[Validators.required]),
-    cvv: new FormControl('',[Validators.required, Validators.minLength(3), Validators.maxLength(3)])
+    cardNo: new FormControl('',[Validators.required, 
+      Validators.minLength(16), 
+      Validators.maxLength(16),
+      Validators.pattern("^[0-9]*$")]),
+    name: new FormControl('',[Validators.required,
+      Validators.minLength(6)]),
+    expDate: new FormControl('',[Validators.required,
+      Validators.pattern("^(0[1-9]|1[012])\/(2[2-9]|[3-9][0-9])$")]),
+    cvv: new FormControl('',[Validators.required,
+      Validators.pattern("^[0-9][0-9][0-9]$")])
   });
+
+  cardNo = "";
+  name = "";
+  expDate = "";
+  cvv = "";
 
   backToShippingInfo(){
     this.router.navigate(['/order/shippingInfo']);
@@ -57,6 +69,17 @@ export class PaymentComponent implements OnInit {
 
     if(!this.shopVisited){
       this.router.navigate(['/shop']);
+    }else{
+      this.shopService.shippingMethod.subscribe(
+        method => {
+          this.shippingMethod = method;
+        }
+      );
+
+      if(this.shippingMethod == ""){
+        alert("Select Shipping Method")
+        this.router.navigate(['/order/shippingInfo']);
+      }
     }
   }
 
